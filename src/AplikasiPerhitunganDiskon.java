@@ -8,12 +8,14 @@
  *
  * @author LENOVO
  */
+import java.text.DecimalFormat;
 public class AplikasiPerhitunganDiskon extends javax.swing.JFrame {
 
     /**
      * Creates new form AplikasiPerhitunganDiskon
      */
     public AplikasiPerhitunganDiskon() {
+        setTitle("APLIKASI PERHITUNGAN DISKON");
         initComponents();
     }
 
@@ -26,21 +28,150 @@ public class AplikasiPerhitunganDiskon extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        BtnHitung = new javax.swing.JButton();
+        BtnHapus = new javax.swing.JButton();
+        BtnKeluar = new javax.swing.JButton();
+        jTextHarga = new javax.swing.JTextField();
+        jTextDiskon = new javax.swing.JTextField();
+        jTextJumlahDiskon = new javax.swing.JTextField();
+        jTextBayar = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("APLIKASI PERHITUNGAN DISKON");
+
+        jLabel2.setText("Harga Barang");
+
+        jLabel3.setText("Diskon (%)");
+
+        jLabel4.setText("Diskon");
+
+        jLabel5.setText("Total Bayar");
+
+        BtnHitung.setText("Hitung");
+        BtnHitung.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnHitungActionPerformed(evt);
+            }
+        });
+
+        BtnHapus.setText("Hapus");
+        BtnHapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnHapusActionPerformed(evt);
+            }
+        });
+
+        BtnKeluar.setText("Keluar");
+        BtnKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnKeluarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(119, 119, 119))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextHarga)
+                            .addComponent(jTextDiskon, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BtnHapus)
+                            .addComponent(BtnHitung)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(jLabel4)
+                        .addGap(83, 83, 83)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
+                        .addComponent(BtnKeluar)))
+                .addGap(50, 50, 50))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(jTextJumlahDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jTextBayar, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel1)
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(jTextHarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BtnHitung))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnHapus)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnKeluar)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextJumlahDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextBayar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHitungActionPerformed
+       String harga_barang = jTextHarga.getText();
+       String diskon = jTextDiskon.getText();
+       DecimalFormat DF = new DecimalFormat();
+       
+       int harga_diskon = Integer.parseInt(harga_barang) * Integer.parseInt(diskon)/100;
+       int harga_total = Integer.parseInt(harga_barang) - harga_diskon;
+       
+       String s_diskon = Integer.toString(harga_diskon).replaceAll("\\,","");
+       String s_total = Integer.toString(harga_total).replaceAll("\\,","");
+       
+       double d_diskon = Double.parseDouble(s_diskon);
+       double d_total = Double.parseDouble(s_total);
+       
+       jTextJumlahDiskon.setText(""+DF.format(d_diskon));
+       jTextBayar.setText(""+DF.format(d_total));
+    }//GEN-LAST:event_BtnHitungActionPerformed
+
+    private void BtnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHapusActionPerformed
+       jTextHarga.setText("");
+        jTextDiskon.setText("");
+        jTextJumlahDiskon.setText("");
+        jTextBayar.setText("");
+    }//GEN-LAST:event_BtnHapusActionPerformed
+
+    private void BtnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKeluarActionPerformed
+      dispose();
+    }//GEN-LAST:event_BtnKeluarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +209,17 @@ public class AplikasiPerhitunganDiskon extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnHapus;
+    private javax.swing.JButton BtnHitung;
+    private javax.swing.JButton BtnKeluar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField jTextBayar;
+    private javax.swing.JTextField jTextDiskon;
+    private javax.swing.JTextField jTextHarga;
+    private javax.swing.JTextField jTextJumlahDiskon;
     // End of variables declaration//GEN-END:variables
 }
